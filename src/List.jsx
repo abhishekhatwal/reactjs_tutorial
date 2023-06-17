@@ -1,6 +1,6 @@
 import React from "react";
 
-//  List.jsx/List.js is a component function name should be same as component name
+//  List.jsx/List.js is a component. function name should be same as component name
 function List(){
     return (
     <>

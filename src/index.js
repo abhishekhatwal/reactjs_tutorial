@@ -1,13 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Heading from "./Heading";
-import List from "./List";
+import App from "./App";
 
 //react uisng component
 ReactDOM.render(
 <>
-<Heading></Heading>
-<List></List>
+<App></App>
 </>,
 document.getElementById("root")
 );
