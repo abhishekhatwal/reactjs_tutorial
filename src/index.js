@@ -1,19 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import fname from "./App";
-import {lname, name,code} from "./App";
+import Card from "./Card";
 
-//import normal export as it is define while exporting with normal export
-//while accessing function use () for calling it here
-//{fname} etc used bcz js is being used in jsx 
+//react enable us to create our own pros i.e attributes/properties which in this case are imgsrc,title,sname,link are our own define attributes which can be access in caed.jsx using parameter
 ReactDOM.render(
 <>
-<ol>
-    <li>{fname}</li>
-    <li>{lname}</li>
-    <li>{name()}</li>
-    <li>{code()}</li>
-</ol>
+<Card imgsrc="https://picsum.photos/200/300"  title="netflix originals" sname="DARK" link="https://www.netflix.com/fr-en/title/80100172"></Card>
 </>,
 document.getElementById("root")
 );
