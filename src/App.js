@@ -1,17 +1,18 @@
-import React from "react";
-import Heading from "./Heading";
-import List from "./List";
+let fname="abhi";
+let lname="react js";
 
-//  App.jsx/App.js is a component. function name should be same as component name
-function App(){
-    return (
-    <>
-    <Heading></Heading>
-    <List></List>
-    </>
-    );
+
+function name(){
+    let name="react peactice";
+    return name;
 }
 
+function code(){
+    let calc="add num";
+    return calc;
+}
 
-//export function App() by wirting export default App; dont use () otheriwse it will called directly
-export default App;
+// tou can use default export for only one entity for rest of the entity you can use normal export and can simultaneously export one or more item/entity using {}
+export default fname;
+
+export {lname, name,code};
