@@ -1,4 +1,5 @@
 import React from "react";
+import './index.css';
 
 //props(can be anything)  allow us to access user define attributes in index.js(where card function define)
 function Card(props){
