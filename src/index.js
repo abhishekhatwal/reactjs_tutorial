@@ -1,10 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import "./index.css";
 
-// attributes of html should be camelcase without any hyphen(-) is written in jsx
-//all element of html which have no closing tag should have closing tag in jsx e.g-img,br,hr tag should have closing tag in jsx 
+//check index.css 
+//class word is reserve in js so className is used also for is reserverd word in js
+//external css working is same
 
-const name = "vinod";
+const name = "abhi";
 
 const img1 = "https://picsum.photos/200/300";
 const img2 = "https://picsum.photos/250/300";
@@ -12,10 +14,12 @@ const img3 = "https://picsum.photos/300/300";
 
 ReactDOM.render(
 <> 
-<h1 contentEditable="true"> My name is {name} </h1>
+<h1 className="heading"> My name is {name} </h1>
+<div className="main">
 <img src={img1} alt="randomImages" />
 <img src={img2} alt="randomImages" />
 <img src={img3} alt="randomImages" />
+</div>
 </>,
 document.getElementById("root")
 );
