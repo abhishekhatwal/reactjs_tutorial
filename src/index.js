@@ -1,21 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
 
-//expressing/using js in between jsx
-//es6 string literal `${first} ${last}` in between jsx
 
-let x="abhi";
-let first="ab";
-let last="hat";
-
-ReactDOM. render (
+//displaying current date and time in dd/mm/yyyy and h/m/s
+const name = "abhi";
+const currDate = new Date().toLocaleDateString();
+const currTime = new Date().toLocaleTimeString();
+ReactDOM.render(
 <>
-<hl> my name is {x} </hl>
-<p>function is {Math.random()}</p>
-<h2>{`first and last name is ${first} ${last}`} </h2>   
-<h3>add {2+6}</h3>            
-</>
-,
-document . getElementById ("root"));
+<h1>Hello, My name is {name}</h1>
+<p>current date is ={currDate} </p>
+<p>current Time is ={currTime} </p>
+</>,
+document.getElementById("root")
+    
+);
