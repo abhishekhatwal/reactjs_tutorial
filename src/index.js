@@ -3,13 +3,19 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 
+//expressing/using js in between jsx
+//es6 string literal `${first} ${last}` in between jsx
 
-//randering multiple element using react.fragment we can use sugar form of react.freagment also i.e only use <>childs</>
+let x="abhi";
+let first="ab";
+let last="hat";
+
 ReactDOM. render (
-<React.Fragment>
-<hl> Technical </hl>
-<p>Piee die</p>
-<h2>slorem epsium </h2>
-</React.Fragment>
+<>
+<hl> my name is {x} </hl>
+<p>function is {Math.random()}</p>
+<h2>{`first and last name is ${first} ${last}`} </h2>   
+<h3>add {2+6}</h3>            
+</>
 ,
 document . getElementById ("root"));
