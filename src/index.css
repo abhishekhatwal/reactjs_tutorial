@@ -1,12 +1,1 @@
-.main{
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 10px;
-    border: 2px solid black;
-    text-align: center;
-    justify-content: center;
-}
-.heading{
-    text-align: center;
-    font-weight: bolder;
-}
+
