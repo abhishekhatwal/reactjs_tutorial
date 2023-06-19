@@ -1,25 +1,58 @@
 import React, { useState } from 'react';
 
-function ControlledComponent() {
-  const [inputValue, setInputValue] = useState('');
+function App() {
+ 
+  //alternate
+  /*
+   const [fname, setfnameValue] = useState('');
+  const [lname, setlnameValue] = useState('');
 
-  const handleChange = (event) => {              //event object is passed as parameter when u call onChange method
-    setInputValue(event.target.value);          //(event.target.value) gives u current state data when u type in inputbox. for every character u type state of element changes.
+  const [fullname1, setfullname1Value] = useState('');
+  const [fullname2, setfullname2Value] = useState('');
+
+  const fun1=(event)=>{
+    event.preventDefault();                 
+    setfullname1Value(fname);
+    setfullname2Value(lname);
+};
+
+ <h1>{fullname1}{fullname2}</h1>
+
+  */
+  const [fname, setfnameValue] = useState('');
+  const [lname, setlnameValue] = useState('');
+
+  const [fullname, setfullnameValue] = useState('');
+
+
+  const fun1=(event)=>{
+    event.preventDefault();                     //it will prevent page refreshing on default form submission behaviour
+    setfullnameValue(fname+lname);
   };
+
+  const fun2=(event)=>{
+    setfnameValue(event.target.value);
+  }
+  const fun3=(event)=>{
+    setlnameValue(event.target.value);
+  }
 
   return (
     <>
-       <div>
-      <input type="text" value={inputValue} onChange={handleChange} />
-      <p>Input value: {inputValue}</p>
-    </div>
+      <form onSubmit={fun1}>
+        <h1>{fullname}</h1>
+        <div>
+          <input type="text" value={fname} onChange={fun2} />
+        </div>
 
-       <div>
-      <input type="text" value="abc" />
-      <p> you are unable to write anything in input type text in this element bcz  value attribute in input has a fixed value abc also state of this element changes when u write anything in input box to write anything u have to give value attribute a state variable which changes data on state changes also for changing state u have to implement onChange method</p>
-    </div>
+        <div>
+          <input type="text" value={lname} onChange={fun3} />
+        </div>
+
+        <input type="submit" value="click" />
+      </form>
     </>
   );
 }
 
-export default ControlledComponent;
+export default App;
