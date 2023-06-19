@@ -1,45 +1,49 @@
-/*The JavaScript map() function is a built-in higher-order function that is used to transform elements in an array and create a new array 
-based on the transformation. It takes in a callback function as its argument and applies this function to each element of the original array, returning a new array with the transformed values.*/
+/* props in react
 
-//syntex => array.map(callback(element, index, array);
+In React, props (short for "properties") are used to pass data and configuration from a parent component to its child components(or btw the components). Props are a fundamental concept in React and play a crucial role in building reusable and modular components.
+Here's an explanation of how props work in React:
+Parent Component: In the parent component, you define and create child components and provide them with props. Props are specified as attributes when you include the child component in the parent's JSX code.
+Child Component: The child component receives the props passed from the parent as an argument in its function or class declaration. These props are then used to configure the behavior or content of the child component.
 
-//map function in js
-const arr = ["abc", "def", "ghi"];
+Props in React are read-only, meaning that a child component cannot modify the props received from its parent. This design encourages a unidirectional data flow, where data is passed down from parents to children.
+Props allow for the composition and reuse of components, making it easier to build modular, maintainable, and flexible React applications.
 
-const newarr = arr.map(function (val) {
-    return `value is ${val}`;                          //outut will be newarray=["value is abc","value is def","value is ghi"]
-});
+*/  
 
-console.log(newarr);
+/*
+// ParentComponent.jsx
+import React from 'react';
+import ChildComponent from './ChildComponent';
 
+function ParentComponent() {
+  const name = 'John Doe';
+  const age = 25;
 
-//map function on array of object
-const arr1 = [
-    { id: 1, name: "abhi", course: "btech" },
-    { id: 2, name: "shek", course: "mtech" },
-    { id: 3, name: "abc", course: "bsc" }
-];
+  return (
+    <div>
+      <ChildComponent name={name} age={age} />
+    </div>
+  );
+}
 
-const newarr1 = arr1.map(function (val) {
-    return `name is ${val.name}`;                         //it will return all names as array                        
-});
-
-console.log(newarr1);
-
-
-
-//callback function in js
-//In JavaScript, a callback function is a function that is passed as an argument to another function and is invoked at a later point in time. The primary purpose of a callback function is to allow you to define what should happen after a certain operation or task is completed.
+export default ParentComponent;
+ */
   
-  function calculate(a, b,callback) {        //add function passed in callback variable
-    let result= a + b;
-    return callback(result);
-  }
-  
-  function callback(result) {
-    return `result will be ${result}`;
-  }
-  
-  console.log(calculate(5, 3, add));    
 
-  
+
+/*
+// ChildComponent.jsx
+import React from 'react';
+
+function ChildComponent(props) {
+
+  return (
+    <div>
+      <h2>Name: {props.name}</h2>
+      <p>Age: {props.age}</p>
+    </div>
+  );
+}
+
+export default ChildComponent;
+*/
