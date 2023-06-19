@@ -2,51 +2,65 @@ import React, { useState } from 'react';
 
 function App() {
  
-  //alternate
-  /*
-   const [fname, setfnameValue] = useState('');
-  const [lname, setlnameValue] = useState('');
 
-  const [fullname1, setfullname1Value] = useState('');
-  const [fullname2, setfullname2Value] = useState('');
+  //handling form state using object
 
-  const fun1=(event)=>{
-    event.preventDefault();                 
-    setfullname1Value(fname);
-    setfullname2Value(lname);
-};
+  const [data, setdataValue] = useState({
+    ftext:"",
+    fnumber:"",
+    femail:""
+  });
 
- <h1>{fullname1}{fullname2}</h1>
-
-  */
-  const [fname, setfnameValue] = useState('');
-  const [lname, setlnameValue] = useState('');
-
-  const [fullname, setfullnameValue] = useState('');
-
-
-  const fun1=(event)=>{
-    event.preventDefault();                     //it will prevent page refreshing on default form submission behaviour
-    setfullnameValue(fname+lname);
-  };
 
   const fun2=(event)=>{
-    setfnameValue(event.target.value);
-  }
-  const fun3=(event)=>{
-    setlnameValue(event.target.value);
-  }
+    let x=event.target.name;
+    let y=event.target.value;
+ 
+                                              //preval hold previous state values
+     setdataValue((preval)=>{                 //preval is object in this case bcz usestate has object as parameter .in case of usestate parameter is array or simple variable preval denote  arary or simple variable 
+       if(x=="textf")
+       {
+        return({ftext:y,fnumber:preval.fnumber,femail:preval.femail});
+       }
+       else if(x=="numberf")
+       {
+        return({ftext:preval.ftext,fnumber:y,femail:preval.femail});
+       }
+       else if(x=="emailf")
+       {
+        return({ftext:preval.ftext,fnumber:preval.fnumber,femail:y});
+       }
+     });
+}
+
+  const [finaldata, setfinaldata] = useState({
+    ftext:"",
+    fnumber:"",
+    femail:""
+  });
+
+   const fun1=(event)=>{
+    event.preventDefault();                     //it will prevent page refreshing on default form submission behaviour
+    setfinaldata(data);
+  };
+ 
 
   return (
     <>
       <form onSubmit={fun1}>
-        <h1>{fullname}</h1>
+        <h1>{finaldata.ftext}</h1>
+        <h2>{finaldata.fnumber}</h2>
+        <h3>{finaldata.femail}</h3>
         <div>
-          <input type="text" value={fname} onChange={fun2} />
+          <input type="text" name="textf" value={data.ftext} onChange={fun2} />
         </div>
 
         <div>
-          <input type="text" value={lname} onChange={fun3} />
+          <input type="number" name="numberf"  value={data.fnumber} onChange={fun2} />
+        </div>
+
+        <div>
+          <input type="email"  name="emailf" value={data.femail} onChange={fun2} />
         </div>
 
         <input type="submit" value="click" />
