@@ -1,42 +1,25 @@
-/*
-In this example, the useState hook is used to create a state variable count with an initial value of 0 and a setter function setCount.
- The count value is displayed in the JSX code, and when the button is clicked, the increment function is called, which updates the count state by invoking setCount with the new value.
-*/
-
-
 import React, { useState } from 'react';
 
-function App() {
-    let count=0;
-    let bg="red";
+function ControlledComponent() {
+  const [inputValue, setInputValue] = useState('');
 
-    const [newcount, setCount] = useState(count);           //hooks created
-    const [upbg,fun]=useState(bg);
+  const handleChange = (event) => {              //event object is passed as parameter when u call onChange method
+    setInputValue(event.target.value);          //(event.target.value) gives u current state data when u type in inputbox. for every character u type state of element changes.
+  };
 
-    const increment = () => {
-      setCount(newcount + 1);
+  return (
+    <>
+       <div>
+      <input type="text" value={inputValue} onChange={handleChange} />
+      <p>Input value: {inputValue}</p>
+    </div>
 
-      let newupbg="yellow";
-      fun(newupbg);
-    };
+       <div>
+      <input type="text" value="abc" />
+      <p> you are unable to write anything in input type text in this element bcz  value attribute in input has a fixed value abc also state of this element changes when u write anything in input box to write anything u have to give value attribute a state variable which changes data on state changes also for changing state u have to implement onChange method</p>
+    </div>
+    </>
+  );
+}
 
-    const change = () => {
-        setCount(newcount + 1);
-  
-        let newupbg="red";
-        fun(newupbg);
-      };
-  
-    return (
-      <div style={{backgroundColor:upbg}}>
-        <p style={{color:"white",fontSize:"26px",fontWeight:"bolder"}}>Count: {newcount}</p>                 
-        <button onClick={increment} onDoubleClick={change}>Increment</button>
-      </div>
-    );
-  }
-  
-  export default App;
-
-  /*
-  in react you cannot access or update the html/jsx element value directly like you do in js by creating a simple function to increment count value r changing background color but here u have to use state and hooks to manipulate elements data in runntime.
-  */
+export default ControlledComponent;
