@@ -1,15 +1,15 @@
-import React from "react";
-import {Firstname} from "./App";
+import React, { useContext } from "react";
+import {Firstname,Lastname} from "./App";
 
 //component name should be start with uppercase
 const ConC=()=>{
          
+    let fname=useContext(Firstname);
+    let lname=useContext(Lastname);         //directly getting value using usecontext hook which incase of context api is little difficult and messier
+ 
     return(
      <>
-     <Firstname.Consumer>{(fname)=>{
-        <h1>my name is {fname} </h1>                          //this will  get the data passed directly from App component without prop
-     }}</Firstname.Consumer>
-       
+        <h1>my name is {fname} {lname} </h1>          
     </>);
 }
 
