@@ -38,5 +38,35 @@ function App() {
   export default App;
 
   /*
-  in react you cannot access or update the html/jsx element value directly like you do in js by creating a simple function to increment count value r changing background color but here u have to use state and hooks to manipulate elements data in runntime.
+  in react you cannot access or update the html/jsx element value directly like you do in js by creating a simple function to increment count value r changing background color but here u have to use state and hooks to manipulate elements data in runntime
+  
   */
+
+
+/*code for toggle color of paragraph onclick
+ 
+import React, { useState } from 'react';
+
+function App() {
+  const [isSelected, setIsSelected] = useState(false);
+
+  const handleClick = () => {
+    setIsSelected(!isSelected);
+  };
+
+  const itemStyle = {
+    color: isSelected ? 'red' : 'black',
+  };
+
+  return (
+    <div>
+      <p style={itemStyle} onClick={handleClick}>
+        Selectable Item
+      </p>
+    </div>
+  );
+}
+
+export default App;
+
+*/
