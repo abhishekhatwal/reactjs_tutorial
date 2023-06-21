@@ -1,28 +1,26 @@
+// App.js
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Navbar from "./Navbar";
+import Home from "./Home";
+import About from "./About";
+import Services from "./Services";
+import NotFound from "./NotFound";
 
-import React, { useState } from "react";
-
-//component name should be start with uppercase
 const App = () => {
-    const [num, selectop] = useState();
-
-    let fun1 = (event) => {
-        selectop(event.target.value);
-    }
-
-
-    return (
-        <>
-            <h1>you selected {num}</h1>
-            
-            <select value={num} onChange={fun1}>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="7">7</option>
-                <option value="9">9</option>
-            </select>
-        </>);
-}
+  return (
+    <>
+      <Navbar />
+     <Routes>
+      <Route exact path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/services" element={<Services />} />
+      <Route  element={<NotFound />} />
+    </Routes>
+      </>
+  );
+};
 
 export default App;
 
+//in place of Switch now we use Routes and in place of component attribute we have to use element attribute whose value should be object containing component 
