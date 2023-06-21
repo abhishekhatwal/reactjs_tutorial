@@ -1,0 +1,121 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+.header-1{
+background-color: rgb(209, 145, 145);
+height: 10vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.header1-h1{
+color: white;
+font-size: 3.5rem;
+font-weight: bold;
+font-family: 'Righteous', cursive;
+}
+
+.section-1{
+}
+
+.section1-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.section1-form1{
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+    position: relative;
+    border:  1px solid black;
+   outline: none;
+   box-shadow: 20px 20px 40px rgb(205, 193, 193);
+   border-radius: 5px;
+}
+.section1-text1{
+   height: 5vh;
+   font-weight: 2rem;
+   text-align: center;
+   border: none;
+   outline: none;
+   border-bottom: 2px solid black;
+ 
+ 
+}
+.section1-textarea1{
+    padding: 2px;
+    border: 1px solid rgb(192, 190, 190);
+}
+
+.add-btn{
+position: absolute;
+float: right;
+bottom:-10px;
+right:-10px;
+width: 2.5rem;
+height: 2.5rem;
+border-radius: 50%;
+font-size: 2rem;
+background-color: cadetblue;
+color: white;
+}
+.add-btn:hover{
+    background-color: rgb(72, 200, 72);
+    cursor: pointer;
+}
+.section-2{
+  
+}
+.section2-div{
+    display: inline-block;
+    background-color: brown;
+    margin: 35px;
+    padding: 25px;
+   box-shadow: 20px 20px 40px rgb(100, 86, 66);
+}
+.section2-div:hover{
+    transition: 2s;
+    transform: scale(1.2);
+}
+.section2-h2{
+   margin: 5px; 
+   font-family: 'Acme', sans-serif;
+}
+.section2-p1{
+    margin: 5px;
+    display: inline-block;
+    font-family: 'Satisfy', cursive;
+}
+.delete-btn{
+margin-left: 10px;
+margin-top: 20px;
+width: 3rem;
+height: 2rem;
+color: white;
+background-color: cadetblue ;
+}
+
+.delete-btn:hover{
+    background-color: red;
+    cursor: pointer;
+}
+
+.footer-1{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+.footer1-h1{
+    position: relative;
+    margin-bottom: 20px;
+}
+
