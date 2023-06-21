@@ -1,27 +1,28 @@
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 //component name should be start with uppercase
 const App = () => {
-const [count,addin]=useState(0);
+    const [num, selectop] = useState();
 
-let increment=()=>{
- addin(count+1);
-}
+    let fun1 = (event) => {
+        selectop(event.target.value);
+    }
 
-useEffect(()=>{                                                   //this  useEffect function invokes just after increment function bcz button clicked will increment count and change state of button bcz count++, whole component will rerender then useEffect invokes.
-    alert(`useEffect invokes`);                    
-    document.title=`increment by ${count}`;
-});
 
     return (
         <>
-            <button onClick={increment}>click {count}</button>
+            <h1>you selected {num}</h1>
+            
+            <select value={num} onChange={fun1}>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="7">7</option>
+                <option value="9">9</option>
+            </select>
         </>);
 }
 
 export default App;
 
-//useEffect hook allow you to perform certain operation when component render
-//callback function inside useeffect hook will be called everytime whenever there will be any change in state(data) .bcz every time state change component rerender and useeffect will be called after rerender of component.
-//first time when page load useeffect it define runs.
