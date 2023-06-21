@@ -1,39 +1,28 @@
-import React, { useState } from "react";
-import Header from "./Header";
-import Section1 from "./Section1";
-import Section2 from "./Section2";
-import Footer from "./Footer";
+//i want to pass name to ConC component without using prop and  sending it to ConA,ConB instead directly sending data to ConC that can be done with context api
+
+import React, { createContext } from "react";
+import ConA from "./ConA";
 //component name should be start with uppercase
 const App=()=>{
-    const[dataarr,updatedataarr]=useState([]);
 
-    let addobject=(data)=>{
-          updatedataarr((preval)=>{
-             return [...preval,data];
-          })
-    }
-
-    let deletenote=(pos)=>{
-       let newdataarr= dataarr.filter((i,ind)=>{
-           return pos!=ind;
-        })
-        updatedataarr(newdataarr);
-    }
-
+    const Firstname=createContext();             //creating a component with help of createcontext() method which use to pass data in another component without using prop
+   
     return(
-    <>
-    <Header/>                           
-     <Section1 addobject={addobject}/>
-     <section className="section-2">
-     {dataarr.map((objval,index)=>{
-        const textareav=objval.textareav;
-        const textv=objval.textv;
-
-         return  <Section2 title={textv} para={textareav} key={index} pos={index} deletenote={deletenote}  />
-     })}
-</section>
-     <Footer/>
+     <>
+    <Firstname.Provider value={"abhi"}>           
+      <ConA></ConA>
+    </Firstname.Provider>
     </>);
 }
 
 export default App;
+export {Firstname};
+
+
+
+
+
+
+//react hook provide a concept call context api
+//react context api allow u to access data at different level of component tree without passing prop to every level/component
+//context Provider send the data context consumer receive the data.
