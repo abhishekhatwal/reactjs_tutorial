@@ -1,15 +1,11 @@
 import React from "react";
 import  ReactDOM  from "react-dom";
-import "./index.css";
+
 import App from "./App";
-import { BrowserRouter } from "react-router-dom";
-
-
-ReactDOM.render(<BrowserRouter><App/></BrowserRouter>,document.getElementById("root"));     //Define all component inside browserrouter tag so to create multipage website
 
 
 
+ReactDOM.render(<App/>,document.getElementById("root"));    
 
-//aside from react hooks(useEffect,useState) router pakage also provide 3 hooks useParam,useLocation and useHistory
 
-//useHistory() hook give u the object which contain user History i.e which page he went etc. it help to redirect user to previous page
+

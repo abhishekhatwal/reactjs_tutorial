@@ -1,26 +1,19 @@
 // App.js
-import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Navbar from "./Navbar";
-import Home from "./Home";
-import About from "./About";
-import Services from "./Services";
-import NotFound from "./NotFound";
+import React, { useState } from "react";
+import  Searchresult from "./Searchresult";
 
 const App = () => {
+
+  const[search,setsearch]=useState();
+
+
   return (
     <>
-      <Navbar />
-     <Routes>
-      <Route exact path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/services" element={<Services />} />
-      <Route  element={<NotFound />} />
-    </Routes>
+   <input type="text" style={{margin:"20px"}} value={search} onChange={(e)=>setsearch(e.target.search)}/>
+   <Searchresult search={search}/>
       </>
   );
 };
 
 export default App;
 
-//in place of Switch now we use Routes and in place of component attribute we have to use element attribute whose value should be object containing component 
