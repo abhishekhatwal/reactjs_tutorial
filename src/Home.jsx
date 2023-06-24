@@ -1,7 +1,7 @@
 // Home.js
 //demostration of useParam() router hook
 import React from "react";
-import { Link } from "react-router-dom";
+
 
 const Home = () => {
 
@@ -9,7 +9,9 @@ const Home = () => {
         
   return (
     <div>
-      <Link to="/users">User List</Link>
+      <h1>Welcome to the Home page! current path is </h1>
+      <p>This is the landing page of our website.</p>
+      <p>go to about section to demonstrate useHistory hook</p>
     </div>
   );
 };

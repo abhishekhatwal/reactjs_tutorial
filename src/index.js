@@ -12,5 +12,4 @@ ReactDOM.render(<BrowserRouter><App/></BrowserRouter>,document.getElementById("r
 
 //aside from react hooks(useEffect,useState) router pakage also provide 3 hooks useParam,useLocation and useHistory
 
-/*The useParams hook is a feature provided by the React Router library that allows you to access the dynamic parameters from the URL in your
- React components. It extracts the values of URL parameters and makes them available for use within your component.*/
+//useHistory() hook give u the object which contain user History i.e which page he went etc. it help to redirect user to previous page

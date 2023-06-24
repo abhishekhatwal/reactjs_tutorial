@@ -6,8 +6,6 @@ import Home from "./Home";
 import About from "./About";
 import Services from "./Services";
 import NotFound from "./NotFound";
-import UserList from "./UserList";
-import UserProfile from "./UserProfile";
 
 const App = () => {
   return (
@@ -15,8 +13,6 @@ const App = () => {
       <Navbar />
      <Routes>
       <Route exact path="/" element={<Home />} />
-      <Route exact path="/users" element={<UserList/>} />
-      <Route path="/users/:id" element={<UserProfile/>} />
       <Route path="/about" element={<About />} />
       <Route path="/services" element={<Services />} />
       <Route  element={<NotFound />} />
