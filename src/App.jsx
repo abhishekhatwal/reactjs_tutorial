@@ -1,19 +1,18 @@
-// App.js
-import React, { useState } from "react";
-import  Searchresult from "./Searchresult";
-
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { incNum,decNum } from './action/action';
 const App = () => {
-
-  const[search,setsearch]=useState();
-
-
+  const mystate=useSelector((state)=>{
+           state.changenum
+  })
+  const dispatch=useDispatch();
   return (
     <>
-   <input type="text" style={{margin:"20px"}} value={search} onChange={(e)=>setsearch(e.target.search)}/>
-   <Searchresult search={search}/>
-      </>
-  );
-};
+     <input type="number" vlaue={mystate} />
+     <button onClick={()=>{dispatch(incNum(5))}}>increment</button>
+     <button onClick={()=>{dispatch(decNum)}}>decrement</button>
+    </>
+  )
+}
 
 export default App;
-
