@@ -1,16 +1,23 @@
-import React from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import { incNum,decNum } from './action/action';
+import React, { useState } from 'react'
+import { useRef } from 'react';
+
 const App = () => {
-  const mystate=useSelector((state)=>{
-           state.changenum
-  })
-  const dispatch=useDispatch();
+  
+  const firstname=useRef(null);
+
+  
+  let fun=(e)=>{
+   e.preventDefault();
+    console.log(firstname.current.value);
+  }
+
   return (
     <>
-     <input type="number" vlaue={mystate} />
-     <button onClick={()=>{dispatch(incNum(5))}}>increment</button>
-     <button onClick={()=>{dispatch(decNum)}}>decrement</button>
+    <form action="" onSubmit={fun}>
+      <input type="text" ref={firstname} />
+      <input type="submit" />
+    </form>
+  
     </>
   )
 }
